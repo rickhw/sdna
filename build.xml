@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="melodist ui" default="default">
+    <description>
+            description
+    </description>
+	<property name="program.name" value="RMC" />
+
+	<tstamp>
+		<format property="timestamp" pattern="yyyyMMddHHmmss" />
+	</tstamp>
+	<property name="build.dir" value="dist/${program.name}_b${timestamp}" />
+		
+	<target name="default" description="description">
+		<antcall target="build"></antcall>
+		<antcall target="dist"></antcall>
+	</target>
+	
+    <target name="build" description="description">
+    	<delete dir="build"></delete>
+    	<mkdir dir="build"/>
+    	<jar destfile="build/ui.jar" basedir="bin" update="false"></jar>
+    </target>
+
+    <target name="dist" description="description">
+    	<mkdir dir="/lib"/>
+    	<copydir dest="${build.dir}/resources" src="resources"></copydir>
+    	<copy file="build/ui.jar" todir="${build.dir}/lib" />
+    	<copy file="lib/swt.jar" todir="${build.dir}/lib" />
+    	<copy file="../org.rickhw.melodist.core/build/core.jar" todir="${build.dir}/lib" />
+    	
+    </target>
+
+
+</project>
+ 
