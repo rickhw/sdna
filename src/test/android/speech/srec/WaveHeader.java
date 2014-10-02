@@ -49,7 +49,7 @@ public class WaveHeader {
     /** Indicates ALAW format. */
     public static final short FORMAT_ALAW = 6;
     /** Indicates ULAW format. */
-    public static final short FORMA T_ULAW = 7;
+    public static final short FORMAT_ULAW = 7;
     
     private short mFormat;
     private short mNumChannels;
