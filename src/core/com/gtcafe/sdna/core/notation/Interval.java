@@ -1,7 +1,5 @@
 package com.gtcafe.sdna.core.notation;
 
-
-
 /**
  * 音程
  * <b>properties</b><br>
@@ -9,7 +7,7 @@ package com.gtcafe.sdna.core.notation;
  * <li>naturalStep: </li>
  * <li>qualityName: </li>
  * 
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  * @see http://en.wikipedia.org/wiki/Interval_(music)
  * @TODO
  */
@@ -92,7 +90,7 @@ public class Interval implements IntervalDeclaration {
 	 * @param m1
 	 * @param m2
 	 */
-	public Interval(MidiNotation m1, MidiNotation m2) {
+	public Interval(MIDINotation m1, MIDINotation m2) {
 		
 	}
 	

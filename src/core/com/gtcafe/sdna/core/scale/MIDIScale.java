@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import com.gtcafe.sdna.core.notation.MidiNotation;
+import com.gtcafe.sdna.core.notation.MIDINotation;
 import com.gtcafe.sdna.core.notation.NaturalNotation;
 
 /**
@@ -20,9 +20,9 @@ import com.gtcafe.sdna.core.notation.NaturalNotation;
  *   @param useSharp
  *   @param isMinorSystem() 
  * 
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  */
-public class MidiScale implements IScaleTable {
+public class MIDIScale implements IScaleTable {
 	//private boolean debug = true;
 	/**
 	 * by 5th cycle
@@ -66,7 +66,7 @@ public class MidiScale implements IScaleTable {
 	/**
 	 * Map for scale mapping of midiIndex and midiNotation
 	 */
-	private Map<Integer, MidiNotation> midiScaleMap;
+	private Map<Integer, MIDINotation> midiScaleMap;
 
 	/**
 	 * Natural scale for Key
@@ -82,7 +82,7 @@ public class MidiScale implements IScaleTable {
 	 * Create the Scale by root in SCALE_ROOT_C, and scale root with
 	 * NATURAL_MAJOR.
 	 */
-	public MidiScale() {
+	public MIDIScale() {
 		this(ROOT_C, NATURAL_MAJOR);
 	}
 
@@ -92,13 +92,13 @@ public class MidiScale implements IScaleTable {
 	 * @see IScaleTable#SCALE_INTERVALS
 	 * @see IScaleDeclaration#scale_index
 	 */
-	public MidiScale(int scaleId) {
+	public MIDIScale(int scaleId) {
 		this(ROOT_C, scaleId);
 	}
 
-	public MidiScale(NaturalNotation rootNote, int scaleIntervalId) {
+	public MIDIScale(NaturalNotation rootNote, int scaleIntervalId) {
 		this.naturalScaleRole = new NaturalScaleRole(scaleIntervalId);
-		this.midiScaleMap = new TreeMap<Integer, MidiNotation>();
+		this.midiScaleMap = new TreeMap<Integer, MIDINotation>();
 		this.naturalScaleMap = new HashMap<Integer, NaturalNotation>();
 		this.symbols = new ArrayList<String>();
 		this.rootNotation = rootNote;
@@ -200,7 +200,7 @@ public class MidiScale implements IScaleTable {
 			for (Iterator<Integer> iter = newInterval.iterator(); iter.hasNext();) {
 				Integer interval = (Integer) iter.next();
 				if (stepMidiIndex >= 0 && stepMidiIndex <= MIDI_INDEX_END) {
-					midiScaleMap.put(stepMidiIndex, new MidiNotation(stepMidiIndex));
+					midiScaleMap.put(stepMidiIndex, new MIDINotation(stepMidiIndex));
 				}
 				stepMidiIndex += interval;
 			}
@@ -217,7 +217,7 @@ public class MidiScale implements IScaleTable {
 		Iterator<Integer> iterator = midiScaleMap.keySet().iterator();
 		while(iterator.hasNext()) {
 			int midiIndex = iterator.next();
-			MidiNotation midiNote = midiScaleMap.get(midiIndex);
+			MIDINotation midiNote = midiScaleMap.get(midiIndex);
 			NaturalNotation nn = midiNote.getNatural();
 			int idx = nn.getNaturalIndex();
 			
@@ -255,7 +255,7 @@ public class MidiScale implements IScaleTable {
 		Iterator<Integer> iterator = midiScaleMap.keySet().iterator();
 		while(iterator.hasNext()) {
 			int midiIndex = iterator.next();
-			MidiNotation midiNote = midiScaleMap.get(midiIndex);
+			MIDINotation midiNote = midiScaleMap.get(midiIndex);
 			NaturalNotation nn = midiNote.getNatural();
 			nn.setUseSharp(useSharp);
 		}
@@ -305,8 +305,8 @@ public class MidiScale implements IScaleTable {
 		//System.out.println(new Scale(SCALE_ROOT_A, NATURAL_MAJOR));
 		//for(int i=0; i<12; i++)
 		//System.out.println(new Scale(ROOT_As, NATURAL_MAJOR));
-		System.out.println(new MidiScale(ROOT_D, NATURAL_MAJOR));
-		System.out.println(new MidiScale(ROOT_D, HARMONIC_MINOR));
+		System.out.println(new MIDIScale(ROOT_D, NATURAL_MAJOR));
+		System.out.println(new MIDIScale(ROOT_D, HARMONIC_MINOR));
 		//Scale s = new Scale(ROOT_A, NATURAL_MAJOR);
 		//System.out.println(s.midiNumberInfo());
 		//System.out.println(s.notationsInfo());
@@ -337,7 +337,7 @@ public class MidiScale implements IScaleTable {
 		return naturalScaleMap;
 	}
 
-	public Map<Integer, MidiNotation> getMidiScaleMap() {
+	public Map<Integer, MIDINotation> getMidiScaleMap() {
 		return midiScaleMap;
 	}
 
@@ -346,7 +346,7 @@ public class MidiScale implements IScaleTable {
 		Iterator<Integer> iterator = this.midiScaleMap.keySet().iterator();
 		while(iterator.hasNext()) {
 			int midiIdx = iterator.next();
-			MidiNotation mn = midiScaleMap.get(midiIdx);
+			MIDINotation mn = midiScaleMap.get(midiIdx);
 			mn.getNatural().setLetterSymbolLocation(isRightSide);
 		}
 	}
@@ -356,7 +356,7 @@ public class MidiScale implements IScaleTable {
 		Iterator<Integer> iterator = this.midiScaleMap.keySet().iterator();
 		while(iterator.hasNext()) {
 			int midiIdx = iterator.next();
-			MidiNotation mn = midiScaleMap.get(midiIdx);
+			MIDINotation mn = midiScaleMap.get(midiIdx);
 			mn.getNatural().setNumberSymbolLocation(isRightSide);
 		}
 	}

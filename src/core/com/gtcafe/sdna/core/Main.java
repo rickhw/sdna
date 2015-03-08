@@ -1,5 +1,10 @@
 package com.gtcafe.sdna.core;
 
+/**
+ * Unit test ..
+ * 
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
 public class Main {
 
 	// 全音

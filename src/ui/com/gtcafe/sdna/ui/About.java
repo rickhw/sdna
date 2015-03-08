@@ -3,6 +3,9 @@ package com.gtcafe.sdna.ui;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
 public interface About {
 	
 	//

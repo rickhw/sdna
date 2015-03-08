@@ -1,7 +1,7 @@
 package com.gtcafe.sdna.core.notation;
 /**
  * 
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  * @see http://en.wikipedia.org/wiki/Interval_(music)
  */
 public interface IntervalDeclaration {

@@ -5,8 +5,7 @@ import com.gtcafe.sdna.core.notation.NaturalNotation;
 /**
  * Scale Declaration which includes name, role, step
  * 
- * @author rick
- * 
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  */
 public interface IScaleDeclaration {
 

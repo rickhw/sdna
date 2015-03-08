@@ -1,8 +1,5 @@
 package com.gtcafe.sdna.ui.composite;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -17,12 +14,15 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
-import com.gtcafe.sdna.core.notation.MidiNotation;
+import com.gtcafe.sdna.core.notation.MIDINotation;
 import com.gtcafe.sdna.core.notation.NaturalNotation;
 import com.gtcafe.sdna.core.scale.IScaleTable;
-import com.gtcafe.sdna.core.scale.MidiScale;
+import com.gtcafe.sdna.core.scale.MIDIScale;
 import com.gtcafe.swt.BorderLayout;
 
+/**
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
 public class NotationComposite extends Composite implements SelectionListener {
 
 	private static final long serialVersionUID = 7040366663250041519L;
@@ -157,7 +157,7 @@ public class NotationComposite extends Composite implements SelectionListener {
 			statusLabel.setText("");
 		} else if (items != null && items.length > 0) {
 			TableItem item = items[0];
-			MidiScale scale = (MidiScale) item.getData();
+			MIDIScale scale = (MIDIScale) item.getData();
 			statusLabel.setText(String.format(
 					"根音：%s  音階名稱：%s  音程關係：%s  升降記號：%s", scale.getRootNotation()
 							.natural(), scale.getNaturalScaleRole()
@@ -208,7 +208,7 @@ public class NotationComposite extends Composite implements SelectionListener {
 
 
 		} else if(noteType == midiNoteRadio) {
-			MidiNotation mn = new MidiNotation(nn.natural(), noteLevel);
+			MIDINotation mn = new MIDINotation(nn.natural(), noteLevel);
 			
 			TableItem item = new TableItem(infoTable, SWT.NULL);
 			item.setText(0, "MidiLetter");

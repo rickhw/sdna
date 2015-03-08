@@ -5,12 +5,10 @@ import java.util.List;
 
 import com.gtcafe.sdna.core.notation.NaturalNotation;
 
-
-
 /**
  * Natural Scale Comparation
  * 音階比對: 輸入適當的音符比對符合比率.
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  * @TODO
  */
 public class NaturalScaleComparation {

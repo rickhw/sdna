@@ -1,7 +1,11 @@
 package com.gtcafe.sdna.core;
 
-
-public class CoreUtils implements IMidiCommon {
+/**
+ * Utils to calculate the midi notes.
+ * 
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
+public class CoreUtils implements IMIDICommon {
 
 	/**
 	 * mask the midi index to available range (0 ~ 127)

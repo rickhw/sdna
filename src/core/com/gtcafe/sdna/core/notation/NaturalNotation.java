@@ -6,7 +6,6 @@ import java.util.HashMap;
 import com.gtcafe.sdna.core.CoreUtils;
 
 
-
 /**
  * <b> NaturalNotation </b><br>
  * <br>
@@ -22,8 +21,8 @@ import com.gtcafe.sdna.core.CoreUtils;
  * <li> expr: user expression
  * <li> letterSharp
  * 
- * @author rick
- * @see MidiNotation
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ * @see MIDINotation
  * @see http://en.wikipedia.org/wiki/Note
  */
 public class NaturalNotation extends HashMap<String, String> {//implements Comparable<NaturalNotation> {

@@ -1,10 +1,10 @@
 package com.gtcafe.sdna.core;
 /**
- * Midi Note
- * @author rick
- *
+ * MIDI Note
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ * TODO: should be emun
  */
-public interface IMidiNotes {
+public interface IMIDINotes {
 
 	int _C1  = 0;
 	int _C1S = 1;

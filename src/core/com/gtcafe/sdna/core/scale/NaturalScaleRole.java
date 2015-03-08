@@ -4,15 +4,13 @@ import java.util.ArrayList;
 
 import com.gtcafe.sdna.core.notation.NaturalNotation;
 
-
-
 /**
  * 一個八度以內 (Natural) 的音階關係定義.
  * <p>
  * <b>功能:</b>
  * 
  * <li> 依據定義, 計算音群, 提供 natural index 跟 natural letter 資料 </li>
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  */
 public class NaturalScaleRole implements IScaleTable {
 

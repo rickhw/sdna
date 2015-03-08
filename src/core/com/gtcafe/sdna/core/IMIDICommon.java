@@ -1,6 +1,9 @@
 package com.gtcafe.sdna.core;
 
-public interface IMidiCommon {
+/**
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
+public interface IMIDICommon {
 	// 全音
 	int FULL_NOTE = 2;
 

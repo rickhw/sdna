@@ -18,6 +18,9 @@ import com.gtcafe.sdna.ui.composite.NotationComposite;
 import com.gtcafe.sdna.ui.composite.ScaleRootTableComposite;
 import com.gtcafe.sdna.ui.composite.ScaleTypeTableComposite;
 
+/**
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
 public class Main {
 	private Display display;
 	private Shell shell;

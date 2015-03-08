@@ -1,8 +1,7 @@
 package com.gtcafe.sdna.core.notation;
 
 /**
- * 
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  * @TODO
  */
 public abstract class AbstractNotation {

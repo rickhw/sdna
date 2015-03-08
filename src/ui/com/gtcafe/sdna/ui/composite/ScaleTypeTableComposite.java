@@ -16,10 +16,12 @@ import org.eclipse.swt.widgets.TableItem;
 
 import com.gtcafe.sdna.core.notation.NaturalNotation;
 import com.gtcafe.sdna.core.scale.IScaleTable;
-import com.gtcafe.sdna.core.scale.MidiScale;
+import com.gtcafe.sdna.core.scale.MIDIScale;
 import com.gtcafe.swt.BorderLayout;
 
-
+/**
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
 public class ScaleTypeTableComposite extends Composite implements SelectionListener {
 
 	private static final long serialVersionUID = 7040366663250041519L;
@@ -140,7 +142,7 @@ public class ScaleTypeTableComposite extends Composite implements SelectionListe
 				updateScaleTable();
 			} else if(items != null && items.length >0) {
 				TableItem item = items[0];
-				MidiScale scale = (MidiScale)item.getData();
+				MIDIScale scale = (MIDIScale)item.getData();
 				scale.setSymbolMode(symbolMode);
 				String[] data = createScaleNoteArray(scale);
 				item.setText(data);
@@ -159,7 +161,7 @@ public class ScaleTypeTableComposite extends Composite implements SelectionListe
 			if(items == null || items.length <= 0) {
 				updateScaleTable();
 			} else if(items != null && items.length >0) {
-				MidiScale scale = (MidiScale)items[0].getData();
+				MIDIScale scale = (MIDIScale)items[0].getData();
 				scale.setLetterSymbolLocation(letterSymbolRightSide);
 				String[] data = createScaleNoteArray(scale);
 				items[0].setText(data);
@@ -192,7 +194,7 @@ public class ScaleTypeTableComposite extends Composite implements SelectionListe
 			statusLabel.setText("");
 		} else if(items != null && items.length >0) {
 			TableItem item = items[0];
-			MidiScale scale = (MidiScale)item.getData();
+			MIDIScale scale = (MIDIScale)item.getData();
 			statusLabel.setText(String.format("根音：%s  音階名稱：%s  音程關係：%s  升降記號：%s", 
 				scale.getRootNotation().natural(), 
 				scale.getNaturalScaleRole().getRoleName(), 
@@ -213,7 +215,7 @@ public class ScaleTypeTableComposite extends Composite implements SelectionListe
 		for (int i = 0; i < IScaleTable.SCALE_CATEGORY_LIST[scaleCategoryId].length; i++) {
 			TableItem item = new TableItem(scaleTable, SWT.NULL);
 			NaturalNotation rootNote = IScaleTable.ROOTS_HALF_STEP_MODE[rootNoteIdx];
-			MidiScale scale = new MidiScale(rootNote, IScaleTable.SCALE_CATEGORY_LIST[scaleCategoryId][i]);
+			MIDIScale scale = new MIDIScale(rootNote, IScaleTable.SCALE_CATEGORY_LIST[scaleCategoryId][i]);
 			scale.setLetterSymbolLocation(letterSymbolRightSide);
 			scale.setNumberSymbolLocation(numberSymbolRightSide);
 			
@@ -232,7 +234,7 @@ public class ScaleTypeTableComposite extends Composite implements SelectionListe
 		
 	}
 
-	private String[] createScaleNoteArray(MidiScale scale) {
+	private String[] createScaleNoteArray(MIDIScale scale) {
 		scale.setSymbolMode(symbolMode);
 		ArrayList<String> al = new ArrayList<String>();
 		al.add(scale.getNaturalScaleRole().getRoleName());

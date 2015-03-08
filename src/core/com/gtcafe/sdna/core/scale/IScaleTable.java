@@ -1,10 +1,13 @@
 package com.gtcafe.sdna.core.scale;
 
-import com.gtcafe.sdna.core.IMidiCommon;
-import com.gtcafe.sdna.core.IMidiNotes;
+import com.gtcafe.sdna.core.IMIDICommon;
+import com.gtcafe.sdna.core.IMIDINotes;
 import com.gtcafe.sdna.core.notation.NaturalNotation;
 
-public interface IScaleTable extends IScaleDeclaration, IMidiCommon, IMidiNotes {
+/**
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
+ */
+public interface IScaleTable extends IScaleDeclaration, IMIDICommon, IMIDINotes {
 
 	/**
 	 * 所有音階名稱

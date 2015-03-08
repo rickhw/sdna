@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  * @TODO
  */
 public class NaturalScaleRecognition {

@@ -1,18 +1,18 @@
 package com.gtcafe.sdna.core.notation;
 
 import com.gtcafe.sdna.core.CoreUtils;
-import com.gtcafe.sdna.core.IMidiCommon;
-import com.gtcafe.sdna.core.IMidiNotes;
+import com.gtcafe.sdna.core.IMIDICommon;
+import com.gtcafe.sdna.core.IMIDINotes;
 
 /**
  * <b>MIDI Notation</b>
  * <li>MIDI index: 0 ~ 127
  * <li>Midi letter: C-1 ~ G9
  * 
- * @author rick
+ * @author Rick Hwang<rick_kyhwang@hotmail.com>
  * @see http://en.wikipedia.org/wiki/Note
  */
-public class MidiNotation implements IMidiCommon {
+public class MIDINotation implements IMIDICommon {
 
 	private static boolean debug = false;
 
@@ -39,15 +39,15 @@ public class MidiNotation implements IMidiCommon {
 	/**
 	 * initiate in A4
 	 */
-	public MidiNotation() {
-		this(IMidiNotes.A4);
+	public MIDINotation() {
+		this(IMIDINotes.A4);
 	}
 
 	/**
 	 * @param midiIndex
 	 *            0 ~ 127
 	 */
-	public MidiNotation(int midiIndex) {
+	public MIDINotation(int midiIndex) {
 		initByMidiIndex(midiIndex);
 	}
 
@@ -55,7 +55,7 @@ public class MidiNotation implements IMidiCommon {
 	 * @param naturalName =
 	 *            letter + level, ex: G9, C3, Ax3 ...
 	 */
-	public MidiNotation(String naturalName) {
+	public MIDINotation(String naturalName) {
 		initByNaturalName(naturalName);
 	}
 
@@ -65,7 +65,7 @@ public class MidiNotation implements IMidiCommon {
 	 * @param level
 	 *            -1 ~ 9
 	 */
-	public MidiNotation(String letter, int level) {
+	public MIDINotation(String letter, int level) {
 		// init members
 		this.octave = level;
 		this.natural = new NaturalNotation(letter);
@@ -208,47 +208,47 @@ public class MidiNotation implements IMidiCommon {
 	public static void main(String[] args) {
 		// boundary test
 		System.out.println("===== boundary test =====");
-		System.out.println(new MidiNotation(-1)); // = 127
-		System.out.println(new MidiNotation(0));
-		System.out.println(new MidiNotation(127));
-		System.out.println(new MidiNotation(128)); // = 0
+		System.out.println(new MIDINotation(-1)); // = 127
+		System.out.println(new MIDINotation(0));
+		System.out.println(new MIDINotation(127));
+		System.out.println(new MIDINotation(128)); // = 0
 
 		// default
 		System.out.println("==== Default ====");
-		System.out.println(new MidiNotation());
+		System.out.println(new MIDINotation());
 
 		// normolize...
 		// NaturalNotation.useSharp = false;
-		System.out.println(new MidiNotation(60));
-		System.out.println(new MidiNotation(61));
-		System.out.println(new MidiNotation(62));
-		System.out.println(new MidiNotation(63));
-		System.out.println(new MidiNotation(64));
-		System.out.println(new MidiNotation(65));
+		System.out.println(new MIDINotation(60));
+		System.out.println(new MIDINotation(61));
+		System.out.println(new MIDINotation(62));
+		System.out.println(new MIDINotation(63));
+		System.out.println(new MIDINotation(64));
+		System.out.println(new MIDINotation(65));
 		// NaturalNotation.useSharp = true;
-		System.out.println(new MidiNotation(66));
-		System.out.println(new MidiNotation(67));
-		System.out.println(new MidiNotation(68));
-		System.out.println(new MidiNotation(69));
-		System.out.println(new MidiNotation(70));
-		System.out.println(new MidiNotation(71));
-		System.out.println(new MidiNotation(72));
+		System.out.println(new MIDINotation(66));
+		System.out.println(new MIDINotation(67));
+		System.out.println(new MIDINotation(68));
+		System.out.println(new MIDINotation(69));
+		System.out.println(new MIDINotation(70));
+		System.out.println(new MIDINotation(71));
+		System.out.println(new MIDINotation(72));
 
 		System.out.println("===== midiIndex to notation =====");
 		// for (int i = 0; i < 128; i++)
 		// System.out.println(new MidiNotation(i));
 
 		System.out.println("===== natural to notation =====");
-		System.out.println(new MidiNotation(IMidiNotes._A1));
-		System.out.println(new MidiNotation("C-1"));
-		System.out.println(new MidiNotation(108));
-		System.out.println(new MidiNotation("C8"));
-		System.out.println(new MidiNotation(104));
-		System.out.println(new MidiNotation("G#4"));
-		System.out.println(new MidiNotation("C#-1"));
+		System.out.println(new MIDINotation(IMIDINotes._A1));
+		System.out.println(new MIDINotation("C-1"));
+		System.out.println(new MIDINotation(108));
+		System.out.println(new MIDINotation("C8"));
+		System.out.println(new MIDINotation(104));
+		System.out.println(new MIDINotation("G#4"));
+		System.out.println(new MIDINotation("C#-1"));
 
 		// function test.
-		MidiNotation n1 = new MidiNotation(60);
+		MIDINotation n1 = new MIDINotation(60);
 		System.out.println(n1);
 		n1.changeNaturalIndex(5);
 		System.out.println(n1);
@@ -256,7 +256,7 @@ public class MidiNotation implements IMidiCommon {
 		System.out.println(n1);
 		System.out.println(n1.getNatural());
 
-		System.out.println(new MidiNotation(IMidiNotes.B2));
+		System.out.println(new MIDINotation(IMIDINotes.B2));
 
 //		int i = 1;
 //		while (true) {
